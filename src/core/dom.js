@@ -5,7 +5,7 @@ class Dom {
       document.querySelector(selector) :
       selector
   }
-  
+
   html(html) {
     if (typeof html === 'string') {
       this.$el.innerHTML = html
@@ -13,17 +13,17 @@ class Dom {
     }
     return this.$el.outerHTML.trim()
   }
-  
+
   clear() {
     this.html('')
     return this
   }
-  
+
   append(node) {
     if (node instanceof Dom) {
       node = node.$el
     }
-    
+
     if (Element.prototype.append) {
       this.$el.append(node)
     } else {
